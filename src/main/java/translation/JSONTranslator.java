@@ -23,7 +23,7 @@ public class JSONTranslator implements Translator {
     private final List<String> countryCodes = new ArrayList<>();
 
     // the key used is "countryCode-languageCode"; the value is the translated country name
-    private final Map<String, String> translations = new HashMap<>();
+    private final Map<String, String> translations = new HashMap<>(); //dictionary
     /**
      * Construct a JSONTranslator using data from the sample.json resources file.
      */
@@ -53,11 +53,15 @@ public class JSONTranslator implements Translator {
 
                 // TODO Task C: record this countryCode in the correct instance variable
 
+                countryCodes.add(countryCode);
+
                 // iterate through the other keys to get the information that we need
                 for (String key : countryData.keySet()) {
                     if (!key.equals("id") && !key.equals("alpha2") && !key.equals("alpha3")) {
                         String languageCode = key;
                         // TODO Task C: record this translation in the appropriate instance variable
+
+
 
                         if (!languages.contains(languageCode)) {
                             languages.add(languageCode);
